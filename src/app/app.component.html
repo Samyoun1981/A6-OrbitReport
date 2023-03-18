@@ -1,16 +1,12 @@
-<h1>Orbit Report</h1>
 <app-orbit-list [satellites]="displayList"></app-orbit-list>
+
 <div class="search-form">
-    <label>Search:<input #searchTerm type="text" (keyup.enter)="search(searchTerm.value, name.checked, type.checked, operational.checked, orbitType.checked, launchDate.checked);" name="searchTerm" placeholder="Keyword"/></label>
-	<label><input #name type="radio" name = "searchKind" value = 'Name' checked>Name</label>
-	<label><input #type type="radio" name = "searchKind">Type</label>
-	<label><input #operational type="radio" name = "searchKind">Operational</label>
-	<label><input #orbitType type="radio" name = "searchKind">Orbit Type</label>
-	<label><input #launchDate type="radio" name = "searchKind" value = 'Launch Date'>Launch Date (YYYY-MM-DD)</label>
-	<button (click)="search(searchTerm.value, name.checked, type.checked, operational.checked, orbitType.checked, launchDate.checked);">Search</button>
-</div> 
+  <input #searchTerm type="text" placeholder="Enter search term" (keyup.enter) = "search(searchTerm.value)"/>
+  <button class= "button" (click) = "search(searchTerm.value)">Search</button>
+</div>
 
 <app-orbit-counts [satellites]="displayList"></app-orbit-counts>
+
 
 
 <!-- TODO 1: add list component to app HTML -->
